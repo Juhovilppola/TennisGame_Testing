@@ -29,6 +29,41 @@ public class TennisGameTest {
 	}
 	
 	@Test
+	public void player1Advatage() throws TennisGameException {
+		//Arrange
+		TennisGame game = new TennisGame();
+		
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		game.player1Scored();
+		game.player2Scored();
+		game.player1Scored();
+		//Act
+		String score = game.getScore() ;
+		
+			
+	}
+	@Test
+	public void testPlayer1_2points_Player2_4points() throws TennisGameException{
+		TennisGame game = new TennisGame();
+		game.player1Scored();
+		game.player1Scored();
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		String score = game.getScore();
+	}
+	
+	@Test
 	public void testTennisGame_EahcPlayerWin4Points_Score_Deuce() throws TennisGameException {
 		//Arrange
 		TennisGame game = new TennisGame();
