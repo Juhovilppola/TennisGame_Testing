@@ -35,10 +35,12 @@ public class TennisGameTest {
 		
 		game.player2Scored();
 		game.player2Scored();
+		String score = game.getScore(); 
+		assertEquals("30 - love", score);
 		game.player2Scored();
 		
 		game.player1Scored();
-		String score = game.getScore(); 
+		score = game.getScore(); 
 		assertEquals("40 - 15", score);
 		game.player1Scored();
 		game.player1Scored();
@@ -107,8 +109,10 @@ public class TennisGameTest {
 		game.player2Scored();
 		
 		game.player1Scored();
-		game.player2Scored();
 		String score = game.getScore() ;
+		assertEquals("player1 has advantage", score);
+		game.player2Scored();
+		score = game.getScore() ;
 		assertEquals("deuce", score);
 		game.player1Scored();
 		//Act
